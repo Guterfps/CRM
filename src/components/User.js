@@ -8,7 +8,7 @@ class User extends Component{
     render(){
         const user=this.props.user
         return(
-           <div key={user.id} onClick={this.updateuser}>
+           <div key={user._id} onClick={this.updateuser}>
                <span> {user.name.split(' ',2)[0]} </span>
                <span> {user.name.split(' ',2)[1]} </span>
                <span> {user.country} </span>
