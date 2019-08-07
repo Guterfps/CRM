@@ -6,7 +6,7 @@ mongoose.connect( 'mongodb://localhost:27017/ClientsDB', { useNewUrlParser: true
 
 
 const ClientSchema = new Schema({
-    _id: String,
+    // _id: String,
       name: String,
       email: String,
       firstContact: String,

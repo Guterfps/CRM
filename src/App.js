@@ -48,7 +48,7 @@ render(){
     </nav>
     <Route path='/clients' render={()=><Clients Update={this.Update} data={this.state.data}/>} />
     <Route path='/actions' render={()=><Actions newclient={this.newclient} Update={this.Update} data={this.state.data}/>} />
-    <Route path='/analytics' render={()=><Analytics />} />
+    <Route path='/analytics' render={()=><Analytics data={this.state.data}  update={this.componentDidMount}/>} />
     </div>
     </Router>
   )

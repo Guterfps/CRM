@@ -18,8 +18,8 @@ class Clients extends Component{
         const name=target.name
         const value =  target.value
         this.setState({
-            [name]:value
-            
+            [name]:value,
+            counter:0
         })
     }
     next=()=>{
@@ -57,7 +57,7 @@ class Clients extends Component{
            <div>
                <input name='client' type='text' list='clients' onChange={this.search} value={this.state.client} ></input>
                <datalist id="clients">
-                {this.props.data.map(c=><option value={c[this.state.search]}></option>)}
+                {this.props.data.map(c=><option key={c._id} value={c[this.state.search]}></option>)}
                 </datalist>
                 <select name='search' type='select-one' onChange={this.search} value={this.state.search}>
                 <option value='name'>name</option>
@@ -65,7 +65,8 @@ class Clients extends Component{
                 {/* <option value='emailType'>emailType</option> */}
                 <option value='owner'>owner</option>
                 </select>
-               <div>
+                <div className='table'>
+               <div >
                    <span> name </span>
                    <span> surname </span>
                    <span> country </span>
@@ -75,9 +76,11 @@ class Clients extends Component{
                    <span> owner </span>
                    </div>
                {this.props.data.filter(s=> s[this.state.search].indexOf(this.state.client)!==-1).splice(this.state.counter,10).map(n=><User updateuser={this.updateuser} user={n} />)}
+               </div>
                <button onClick={this.back}>back</button>
                <button onClick={this.next}>next</button>
                {this.state.update.show ? <Userupdate Update={this.props.Update} cancel={this.cancel} user={this.state.update.user} />:null}
+               
            </div>
         )
     }
