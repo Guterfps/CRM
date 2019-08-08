@@ -55,18 +55,20 @@ class Clients extends Component{
       
         return(
            <div >
-               <input  name='client' type='text' list='clients' onChange={this.search} value={this.state.client} ></input>
+               <div className='input'>
+               <input placeholder='search'  name='client' type='text' list='clients' onChange={this.search} value={this.state.client} ></input>
                <datalist id="clients">
                 {this.props.data.map(c=><option key={c._id} value={c[this.state.search]}></option>)}
                 </datalist>
-                <select name='search' type='select-one' onChange={this.search} value={this.state.search}>
+                <select className="browser-default col s2" name='search' type='select-one' onChange={this.search} value={this.state.search}>
                 <option value='name'>name</option>
                 <option value='country'>country</option>
                 {/* <option value='emailType'>emailType</option> */}
                 <option value='owner'>owner</option>
                 </select>
+                </div>
                 <div >
-               <div className="row" >
+               <div className="row blue" >
                    <div className="col s2"> name </div>
                    <div className="col s2"> surname </div>
                    <div className="col s2"> country </div>

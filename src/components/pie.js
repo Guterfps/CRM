@@ -83,7 +83,7 @@ export default class Piechart extends PureComponent {
     }
   render() {
     return (
-      <PieChart width={500} height={500}>
+      <PieChart width={600} height={500}>
         <Pie
           activeIndex={this.state.activeIndex}
           activeShape={renderActiveShape}

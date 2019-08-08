@@ -45,29 +45,29 @@ class Updateclient extends Component{
            <div>
                <div  className='input'>
                <h2>update</h2>
-               <input name='client' type='text' list='clients' onChange={this.search} value={this.state.client} ></input>
+              Client : <input placeholder='client name' name='client' type='text' list='clients' onChange={this.search} value={this.state.client} ></input>
                <datalist id="clients">
                 {this.props.data.map(c=><option key={c._id} value={c.name}></option>)}
                 </datalist>
                </div>
-               <div  className='input'>
-               <input name='owner' type='text' list='owners' onChange={this.search} value={this.state.owner} ></input>
+               <div  className='input '>
+               <input  placeholder='owner' name='owner' type='text' list='owners' onChange={this.search} value={this.state.owner} ></input>
                <datalist id="owners">
                 {this.props.data.map(c=><option key={c._id} value={c.owner}></option>)}
                 </datalist>
-                <button onClick={this.transfer}>transfer</button>
+                <button className='btn-small waves-effect waves-light' type="submit" name="action" onClick={this.transfer}>transfer<i className="material-icons right">send</i></button>
                 </div>
                 <div  className='input'>
-                <input name='emailtype' type='text' list='emailtypes' onChange={this.search} value={this.state.emailtype} ></input>
+                <input placeholder='Email type' name='emailtype' type='text' list='emailtypes' onChange={this.search} value={this.state.emailtype} ></input>
                <datalist id="emailtypes">
                 <option key='A' value='A'>A</option>
                 <option key='B' value='B'>B</option>
                 <option key='C' value='C'>C</option>
                 <option key='D' value='D'>D</option>
                 </datalist>
-                <button onClick={this.email}>send</button>
+                <button className='btn-small waves-effect waves-light' type="submit" name="action" onClick={this.email}>send<i className="material-icons right">send</i></button>
                 </div>
-                <div>declare sale <button onClick={this.sold}>sold</button></div>
+                <div>declare sale <button className='btn-small waves-effect waves-light' type="submit" name="action" onClick={this.sold}>sold<i className="material-icons ">attach_money</i></button></div>
            </div>
         )
     }

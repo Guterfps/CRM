@@ -24,14 +24,14 @@ class Userupdate extends Component{
     }
     Update=()=>{
         let user={...this.props.user}
-        user.name=this.state.name+this.state.lastname
+        user.name=this.state.name+' '+this.state.lastname
         user.country=this.state.country
         this.props.Update(user,this.props.user.name)
     }
     render(){
         return(
-           <div  className='input'>
-               <button onClick={this.cancel} >x</button>
+           <div id='popup' className='input'>
+               <button className='x' onClick={this.cancel} >x</button>
               name: <input name='name' type='text' value={this.state.name} onChange={this.update}></input>
               last name: <input name='lastname' type='text' onChange={this.update} value={this.state.lastname}></input>
               country: <input name='country' type='text' onChange={this.update} value={this.state.country}></input>

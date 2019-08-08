@@ -32,7 +32,8 @@ class Badges extends Component{
     render(){
         return(
            <div>
-           <span> new clients in {this.newclients()[1]} :  {this.newclients()[0]}</span>
+           <span> <i class="large material-icons">trending_up</i>  {this.newclients()[0]}new clients in {this.newclients()[1]} 
+           </span>
            <span>Emails Sent : {this.emailsent()}</span>
            <span>Outstanding Clients : {this.notsold()} </span>
            <span>Hottest Country : {this.hotcountry().name},{this.hotcountry().num} sales  </span>

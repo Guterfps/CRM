@@ -35,3 +35,18 @@
 .input{
   width: 20%
 }
+
+#popup{
+  position: absolute;
+  left: 40%;
+  top: 50%;
+  z-index: 1;
+  background-color: aquamarine;
+  opacity: 0.8;
+}
+
+.x{
+  position: absolute;
+  left: 90%;
+  
+}
