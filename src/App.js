@@ -42,9 +42,13 @@ render(){
     <Router>
     <div>
     <nav>
-      <Link to='/clients'> clients </Link>
-      <Link to='/actions'> actions </Link>
-      <Link to='/analytics'> analytics </Link>
+    <div class="nav-wrapper green">
+    <ul id="nav-mobile" class="left hide-on-med-and-down ">
+     <li> <Link to='/clients'> clients </Link></li>
+     <li> <Link to='/actions'> actions </Link></li>
+     <li> <Link to='/analytics'> analytics </Link></li>
+      </ul>
+      </div>
     </nav>
     <Route path='/clients' render={()=><Clients Update={this.Update} data={this.state.data}/>} />
     <Route path='/actions' render={()=><Actions newclient={this.newclient} Update={this.Update} data={this.state.data}/>} />

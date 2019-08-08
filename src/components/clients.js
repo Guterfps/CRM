@@ -54,8 +54,8 @@ class Clients extends Component{
     render(){
       
         return(
-           <div>
-               <input name='client' type='text' list='clients' onChange={this.search} value={this.state.client} ></input>
+           <div >
+               <input  name='client' type='text' list='clients' onChange={this.search} value={this.state.client} ></input>
                <datalist id="clients">
                 {this.props.data.map(c=><option key={c._id} value={c[this.state.search]}></option>)}
                 </datalist>
@@ -65,15 +65,15 @@ class Clients extends Component{
                 {/* <option value='emailType'>emailType</option> */}
                 <option value='owner'>owner</option>
                 </select>
-                <div className='table'>
-               <div >
-                   <span> name </span>
-                   <span> surname </span>
-                   <span> country </span>
-                   <span> firstContact </span>
-                   <span> emailType </span>
-                   <span> sold </span>
-                   <span> owner </span>
+                <div >
+               <div className="row" >
+                   <div className="col s2"> name </div>
+                   <div className="col s2"> surname </div>
+                   <div className="col s2"> country </div>
+                   <div className="col s2"> firstContact </div>
+                   <div className="col s1"> emailType </div>
+                   <div className="col s1"> sold </div>
+                   <div className="col s2"> owner </div>
                    </div>
                {this.props.data.filter(s=> s[this.state.search].indexOf(this.state.client)!==-1).splice(this.state.counter,10).map(n=><User updateuser={this.updateuser} user={n} />)}
                </div>

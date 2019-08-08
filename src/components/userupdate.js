@@ -30,7 +30,7 @@ class Userupdate extends Component{
     }
     render(){
         return(
-           <div>
+           <div  className='input'>
                <button onClick={this.cancel} >x</button>
               name: <input name='name' type='text' value={this.state.name} onChange={this.update}></input>
               last name: <input name='lastname' type='text' onChange={this.update} value={this.state.lastname}></input>
