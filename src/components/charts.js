@@ -62,9 +62,9 @@ search=(event)=>{
         let countrys=this.props.data.map(c=>c[x])
         for(let  c of countrys){
         let num=this.props.data.filter(d=>d[x]===c && d.sold===true)
-        
+        if(c!==undefined && c!==null){
             hotest[c]={name:c,sold:num.length}
-            
+        }
         }
         
         for (let i in hotest){
@@ -76,7 +76,7 @@ search=(event)=>{
     saleslast30days(){
         
         let priorDate = new Date();
-        priorDate.setDate(priorDate.getDate() - 30)
+        priorDate.setDate(priorDate.getDate() - 356)
         let arr=[]
         let obj={}
         let dates=this.props.data.filter(d=>  d.firstContact.split('T',2)[0]>priorDate.toISOString().split('T')[0] )
@@ -122,9 +122,6 @@ search=(event)=>{
                 </select>
                 </div>
                 
-                 
-     
-              
       <BarChart
         width={1000}
         height={300}
@@ -140,9 +137,10 @@ search=(event)=>{
         <Legend />
         <Bar dataKey="sold" fill="red" />
       </BarChart>
+
       <h3>sales since {this.saleslast30days()[1]} {this.saleslast30days()[2]}</h3>
       <LineChart
-        width={500}
+        width={800}
         height={300}
         data={this.saleslast30days()[0]}
         margin={{
@@ -158,7 +156,9 @@ search=(event)=>{
         
       </LineChart>
       <h3>Client Acquisition</h3>
+      <div className='pie'>
         <Pie data={this.props.data} />
+        </div>
            </div>
         )
     }

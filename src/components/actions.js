@@ -7,7 +7,7 @@ class Actions extends Component{
     render(){
         
         return(
-           <div>
+           <div className='pie'>
                <Updateclient Update={this.props.Update}  data={this.props.data} /> 
                <Createclient newclient={this.props.newclient} data={this.props.data} />
            </div>

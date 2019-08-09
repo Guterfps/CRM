@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-const Data=require('./data.json')
+// const Data=require('./data.json')
 const Schema = mongoose.Schema
 mongoose.connect( 'mongodb://localhost:27017/ClientsDB', { useNewUrlParser: true } )
 

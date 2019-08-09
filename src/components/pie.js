@@ -78,12 +78,12 @@ export default class Piechart extends PureComponent {
         let num2=this.props.data.filter(d=> d.firstContact.split('T',2)[0]>priorDate.toISOString().split('T')[0] && d.firstContact.split('T',2)[0]<priorDate2.toISOString().split('T')[0] )
         arr.push({name:'6-12 monthes',value:num2.length})
         let num3=this.props.data.filter(d=> d.firstContact.split('T',2)[0]>priorDate3.toISOString().split('T')[0]  )
-        arr.push({name:'lastmonth',value:num3.length})
+        arr.push({name:'Last month',value:num3.length})
         return arr
     }
   render() {
     return (
-      <PieChart width={600} height={500}>
+      <PieChart width={700} height={700}>
         <Pie
           activeIndex={this.state.activeIndex}
           activeShape={renderActiveShape}

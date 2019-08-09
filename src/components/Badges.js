@@ -32,11 +32,33 @@ class Badges extends Component{
     render(){
         return(
            <div>
-           <span> <i class="large material-icons">trending_up</i>  {this.newclients()[0]}new clients in {this.newclients()[1]} 
+           <span>
+               <div className='bage purple'><i class="large material-icons">trending_up</i></div>
+               <div  className='num'>  
+               <div className='num'> <h2>{this.newclients()[0]} </h2></div> 
+               <div>new clients in {this.newclients()[1]} </div></div>
            </span>
-           <span>Emails Sent : {this.emailsent()}</span>
-           <span>Outstanding Clients : {this.notsold()} </span>
-           <span>Hottest Country : {this.hotcountry().name},{this.hotcountry().num} sales  </span>
+           <span>
+               <div className='bage yellow'><i class="large material-icons">email</i></div>
+               <div  className='num'>
+               <div className='num'> <h2>{this.emailsent()} </h2></div>
+               <div> Emails Sent</div> 
+               </div>
+               </span>
+           <span>
+           <div className='bage blue'><i class="large material-icons">person</i></div>
+           <div  className='num'>
+              <div className='num'><h2>{this.notsold()}</h2> </div>
+              <div> Outstanding Clients</div>
+              </div>
+               </span>
+           <span>
+           <div className='bage red'><i class="large material-icons">whatshot</i></div>
+           <div  className='num'>
+           <div className='num'><h2>{this.hotcountry().name}</h2> </div>
+            <div> Hottest Country sales,{this.hotcountry().num} </div> 
+               </div>
+                </span>
            </div>
         )
     }

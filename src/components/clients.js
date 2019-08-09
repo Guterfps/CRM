@@ -68,14 +68,14 @@ class Clients extends Component{
                 </select>
                 </div>
                 <div >
-               <div className="row blue" >
-                   <div className="col s2"> name </div>
-                   <div className="col s2"> surname </div>
-                   <div className="col s2"> country </div>
-                   <div className="col s2"> firstContact </div>
-                   <div className="col s1"> emailType </div>
-                   <div className="col s1"> sold </div>
-                   <div className="col s2"> owner </div>
+               <div className="row blue titles" >
+                   <div className="col s2 flow-text"> name </div>
+                   <div className="col s2 flow-text"> surname </div>
+                   <div className="col s2 flow-text"> country </div>
+                   <div className="col s2 flow-text"> firstContact </div>
+                   <div className="col s2 flow-text "> emailType </div>
+                   <div className="col s1 flow-text"> sold </div>
+                   <div className="col s1 flow-text"> owner </div>
                    </div>
                {this.props.data.filter(s=> s[this.state.search].indexOf(this.state.client)!==-1).splice(this.state.counter,10).map(n=><User updateuser={this.updateuser} user={n} />)}
                </div>
